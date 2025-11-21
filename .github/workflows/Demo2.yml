@@ -1,5 +1,7 @@
 name: "First Github Action Demo"
-on: [push]
+on:
+  workflow_dispatch:
+  
 jobs:
   job1-Run-On-Ubuntu:
     runs-on: ubuntu-latest
@@ -18,16 +20,4 @@ jobs:
         run: |
           Get-NetFirewallRule -Direction Inbound
           Testing-Job-onMac:
-  runs-on: macos-latest
-    steps:
-         - name: Check out Current Repository
-           uses: actions/checkout@v3
  
-         - name: Install Github CLI
-            run: |
-              brew update
-              brew install gh
-          - name: Install Microsoft Edge
-            run: |
-              brew update
-              brew install --cask microsoft-edge
